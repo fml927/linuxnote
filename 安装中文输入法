@@ -1,0 +1,11 @@
+基于树梅派 linaro 系统：
+
+1、安装fcitx
+sudo apt-get install fcitx  
+安装完成后重启系统，gui界面的右下角会出现一个键盘标记。表示安装成功。
+
+2、安装googlpinyin输入法
+sudo apt-get install fcitx-googlepinyin
+安装完成后可以右键点击上一步安装好显示的键盘来配置输入法。
+
+ctrl+alt可以切换输入法。
