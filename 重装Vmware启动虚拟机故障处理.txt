@@ -1,0 +1,19 @@
+unable to open kernel device \\.\VMCIDev\VMX 重叠I/O操作在进行中 Did you reboot after installing VMware Workstation?
+   Module Device PowerON power on failed
+
+今天启动虚拟机突然出现：
+Unable to open kernel device "\\.\VMCIDev\VMX": 重叠 I/O 操作在进行中. Did you reboot after installing VMware Workstation?
+这样的报错，虚拟机启动不了。在晚上搜了一下解决方法，下面分享给大家：
+解决方法一：（亲测可行）
+对虚拟机相对应的.vmx文件进行编辑修改。
+找到这一行： vmci0.present = "TRUE"
+将 TRUE 改为 FALSE
+或者 直接将这行删除。
+保存此虚拟机的.vmx文件。
+重新运行虚拟机。OK。
+解决方法二：（这个改了没效果，不知道是不是个人原因）
+在vm软件界面上，编辑虚拟机设置。
+在 虚拟机设置 -> 选项 -> 客户机隔离 ->VM通信接口(VMCI)
+把启用VMCI的钩去掉。
+点击确定保存。
+重新运行虚拟机。OK。
